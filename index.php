@@ -75,7 +75,7 @@
 
 
 
-    <label for="publishingYear">utgivningsår/label>
+    <label for="publishingYear">Utgivningsår</label>
 
     <input type="range"
 
