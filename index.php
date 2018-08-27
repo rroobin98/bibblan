@@ -4,16 +4,12 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    // Autoloader för klasserna
-    spl_autoload_register(function ($class_name) {
-        include 'class/class.' . $class_name . '.php';
-    });
+    // starta session
+    session_start();
 
-    $saganOmRingen = new Book("Sagan om ringen", "J R Tolkien", 1950);
 
-    echo "Boktitel: " . $saganOmRingen->getTitle() . "<br>";
-    echo "Författare: " . $saganOmRingen->getAuthor() . "<br>";
-    echo "Utgivningsår: " . $saganOmRingen->getPublishingYear() . "<br>";
+
+
 
 ?>
 
@@ -24,8 +20,6 @@
   <style>
 
     body {
-
-      
 
     }
 
@@ -57,7 +51,7 @@
 
     function updateRange(val) {
 
-      document.getElementById('favoriteCenturyInfo').value=val;
+      document.getElementById('publishingYear').value=val;
 
     }
 
@@ -69,25 +63,25 @@
 
   <h1>Böcker</h1>
 
-  <form action="index.php" method="POST">
+  <form action="session.php" method="POST">
 
-    <label for="userTitle">Titel</label>
+    <label for="title">Titel</label>
 
-    <input type="title" name="userTitle" />
+    <input type="text" name="title" />
 
-    <label for="userName">Författare</label>
+    <label for="author">Författare</label>
 
-    <input type="name" name="userName" />
+    <input type="text" name="author" />
 
 
 
-    <label for="favoriteCentury">utgivnings datum</label>
+    <label for="publishingYear">utgivningsår/label>
 
     <input type="range"
 
-      name="favoriteCentury"
+      name="publishingYear"
 
-      id="favoriteCentury"
+      id="publishingYear"
 
       min="-2000"
 
@@ -101,7 +95,7 @@
 
       <!-- Range har ingen inbyggd "info", därför denna js-lösning. -->
 
-      <input type="text" id="favoriteCenturyInfo" value = "0" />
+      <input type="text" id="publishingYear" value = "0" />
 
 
      <input name ="submit" type="submit" value="Spara">
