@@ -4,7 +4,11 @@
 
     <style>
 
-      body
+      body {
+
+        background-color: <?php echo $favColour; ?>;
+
+      }
 
       label {
 
@@ -30,27 +34,58 @@
 
     </style>
 
+    <script>
 
+      function updateRange(val) {
+
+        document.getElementById('favoriteCenturyInfo').value=val;
+
+      }
+
+    </script>
 
   </head>
 
   <body>
 
-    <h1>Halloj</h1>
+    <h1>Böcker</h1>
 
-    <form action="form.php" method="POST">
+    <form action="webbForms.php" method="POST">
 
-      <label for="userMail">Din epost</label>
+      <label for="userTitle">Titel</label>
 
-      <input type="email" name="userMail" />
+      <input type="title" name="userTitle" />
 
-      <label for="userPassword">Lösenord</label>
+      <label for="userName">Författare</label>
 
-      <input type="password" name="userPassword" />
+      <input type="name" name="userName" />
 
 
 
-       <input name ="submit" type="submit" value="Skicka in mina uppgifter">
+      <label for="favoriteCentury">utgivnings datum</label>
+
+      <input type="range"
+
+        name="favoriteCentury"
+
+        id="favoriteCentury"
+
+        min="-2000"
+
+        max="2300"
+
+        step="100"
+
+        value = "0"
+
+        onchange="updateRange(this.value);" />
+
+        <!-- Range har ingen inbyggd "info", därför denna js-lösning. -->
+
+        <input type="text" id="favoriteCenturyInfo" value = "0" />
+
+
+       <input name ="submit" type="submit" value="Spara">
 
     </form>
 
