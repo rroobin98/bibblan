@@ -22,6 +22,17 @@
             return $this->publishingYear;
         }
 
+        // setters
+        public function setTitle($title) {
+            $this->title = $title;
+          }
+        public function setAuthor($author) {
+            $this->author = $author;
+          }
+        public function setPublishingYear($publishingYear) {
+            $this->publishingYear = $publishingYear;
+          }
+
     }
 
 ?>

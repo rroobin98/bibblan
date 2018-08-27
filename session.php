@@ -18,7 +18,7 @@
 
 
         // instansiera objekt
-        $bok001 = new Book("Sagan om ringen", "J R Tolkien", 1950);
+        $bok001 = new Book();
 
         echo "Boktitel: " . $bok001->getTitle() . "<br>";
         echo "Författare: " . $bok001->getAuthor() . "<br>";
